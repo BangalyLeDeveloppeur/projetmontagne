@@ -1,0 +1,133 @@
+header {
+    color: $white1;
+    position: relative;
+    min-height: 100%;
+    
+
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        opacity: 0;
+        transform: translateY(-50%);
+        animation: headerAnim 1.5s ease forwards ;
+
+
+        @keyframes headerAnim {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+        }
+        h1 {
+            @include title;
+            font-size: 4rem;
+            letter-spacing: 2px;
+
+            @media screen and ( max-width: 700px) {
+                font-size: 2rem;
+                
+            }
+        }
+        p {
+            margin: 40px auto 60px;
+            font-style: italic;
+            widows: 85%;
+        }
+        span {
+    
+            border: 2px solid $white1;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+    }
+    nav {
+            display: flex;
+            justify-content: space-around;
+            background: rgba(136, 248, 248, 0.411);
+            color: $white1;
+            width: 85%;
+            height: 65px;
+            z-index: 100;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @media screen and ( max-width: 700px) {
+                font-size: 0.5rem;
+                }
+        }
+
+    ul {
+                display: flex;
+                align-items: center;
+       }
+.nav-left {
+                &:hover li:not(:hover) {
+                    background: none;
+                    color: $black1;
+                }
+            li {
+                    @include title;
+                    font-size: 0.75rem;
+                    height: 100%;
+                    cursor: pointer;
+                    padding: 18px;
+
+                    @media screen and ( max-width: 700px) {
+                        font-size: 0.5rem;
+                        
+                    }
+
+                    &:first-child {
+                        background: $white1;
+                        color: $black1;
+                        }
+                    &:hover {
+                        background: $white1;
+                        color: $black1;
+                        }
+                }
+
+            }
+
+    .nav-right {
+                    font-size: 1.1rem;
+                    min-width: 100px;
+                    width: 25%;
+                    max-width: 300px;
+                    justify-content: space-around;
+                    margin-right: 10px;
+
+                    @media screen and ( max-width: 700px) {
+                        display: none;
+                        
+                    }
+
+            
+
+                    li {
+                        padding: 18px;
+                        text-align: center;
+                        transition: 0.2s;
+                        cursor: pointer;
+
+                        &:hover {
+                            transform: scale(1.5);
+                        }
+                    }
+                
+                }
+        
+}
+
